@@ -16,6 +16,11 @@ const nextConfig = {
         hostname: "www.google.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "core.pablolacan.com",
+        pathname: "/v1/storage/**",
+      },
     ],
   },
   sassOptions: {

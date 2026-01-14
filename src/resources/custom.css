@@ -52,3 +52,17 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+/* Project carousel image height fix */
+[class*="Carousel"] img {
+  height: 350px !important;
+  max-height: 350px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Ensure carousel container respects the height */
+[class*="Carousel"] [class*="Media"],
+[class*="Carousel"] picture {
+  height: 350px !important;
+  max-height: 350px !important;
+}

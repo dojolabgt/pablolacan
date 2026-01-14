@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Pablo",
+  lastName: "Lacán",
+  name: `Pablo Lacán`,
+  role: "Diseñador Gráfico y Web",
+  avatar: "/photo.webp",
+  email: "contact@pablolacan.com",
+  location: "America/Guatemala", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Español", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Suscríbete al Newsletter de {person.firstName}</>,
+  description: <>Mi newsletter semanal sobre creatividad y diseño</>,
 };
 
 const social: Social = [
@@ -25,26 +25,20 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/pablolacan",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/pablolacan/",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/pablolacan/",
     essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
   },
   {
     name: "Email",
@@ -60,32 +54,32 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Creando experiencias digitales excepcionales</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Featured</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Soy Pablo, un diseñador gráfico y web especializado en crear <Text as="span" size="xl" weight="strong">identidades visuales memorables</Text>. <br /> Diseño de logotipos, desarrollo web con WordPress, Headless CMS y Next.js.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "Acerca de",
+  title: `Acerca de – ${person.name}`,
+  description: `Conoce a ${person.name}, ${person.role} de ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,60 +88,52 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Introducción",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Pablo es un diseñador gráfico y web con sede en Guatemala, especializado en crear identidades visuales
+        memorables y experiencias digitales excepcionales. Su trabajo abarca desde diseño de logotipos e identidad
+        gráfica hasta desarrollo web con WordPress, Headless CMS y tecnologías modernas.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experiencia Laboral",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Universidad Galileo",
+        timeframe: "2017 - Presente",
+        role: "Productor Audiovisual",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Producción y dirección de contenido audiovisual para la universidad,
+            incluyendo videos institucionales, educativos y promocionales.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Gestión de proyectos multimedia y coordinación de equipos creativos
+            para la creación de material visual de alta calidad.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Freelance",
+        timeframe: "2023 - Presente",
+        role: "Diseñador Gráfico y Web",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Diseño de identidades gráficas completas, incluyendo logotipos, manuales de marca
+            y aplicaciones visuales para diversos clientes.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Desarrollo de sitios web con WordPress, Headless CMS (Directus) y Next.js,
+            enfocados en experiencia de usuario y diseño visual impactante.
           </>,
         ],
         images: [],
@@ -156,77 +142,63 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Educación",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Universidad Galileo",
+        description: <>Licenciatura en Comunicación y Diseño (2023 - Actualidad)</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Autodidacta",
+        description: <>Aprendizaje continuo en diseño web, desarrollo frontend y nuevas tecnologías.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Habilidades Técnicas",
     skills: [
       {
-        title: "Figma",
+        title: "Diseño Gráfico",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Creación de identidades visuales, logotipos y diseño gráfico profesional utilizando Adobe Creative Suite.</>
         ),
         tags: [
+          {
+            name: "Photoshop",
+            icon: "photoshop",
+          },
+          {
+            name: "Illustrator",
+            icon: "illustrator",
+          },
           {
             name: "Figma",
             icon: "figma",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Desarrollo Web",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Desarrollo de sitios web con WordPress, Headless CMS (Directus) y Next.js, enfocados en diseño y experiencia de usuario.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "WordPress",
+            icon: "wordpress",
           },
           {
             name: "Next.js",
             icon: "nextjs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Directus",
+            icon: "database",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
@@ -235,17 +207,17 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Escribiendo sobre diseño y tecnología...",
+  description: `Lee lo que ${person.name} ha estado haciendo recientemente`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Proyectos",
+  title: `Proyectos – ${person.name}`,
+  description: `Proyectos de diseño y desarrollo por ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
