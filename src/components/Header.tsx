@@ -78,15 +78,15 @@ export const Header = () => {
                 horizontal="center"
                 zIndex={1}
               >
-                <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+                <Row gap="12" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
                   {routes["/"] && (
                     <ToggleButton
+                      prefixIcon="home"
                       href="/"
                       label="Inicio"
                       selected={pathname === "/"}
                     />
                   )}
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
                   {routes["/about"] && (
                     <>
                       <Row s={{ hide: true }}>
@@ -163,12 +163,6 @@ export const Header = () => {
                       </Row>
                     </>
                   )}
-                  {display.themeSwitcher && (
-                    <>
-                      <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                      <ThemeToggle />
-                    </>
-                  )}
                 </Row>
               </Row>
             </Row>
@@ -176,7 +170,6 @@ export const Header = () => {
 
           {/* Derecha - Desktop */}
           <div style={{ flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: '12px' }} className="desktop-menu">
-            {display.themeSwitcher && <ThemeToggle />}
             <a
               href="https://core.pablolacan.com"
               target="_blank"
