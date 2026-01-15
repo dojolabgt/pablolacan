@@ -1,13 +1,12 @@
 "use client";
 
 import {
-  AvatarGroup,
-  Carousel,
   Column,
   Flex,
   Heading,
   SmartLink,
   Text,
+  Media,
 } from "@once-ui-system/core";
 
 interface ProjectCardProps {
@@ -15,76 +14,126 @@ interface ProjectCardProps {
   priority?: boolean;
   images: string[];
   title: string;
-  content: string;
   description: string;
-  avatars: { src: string }[];
   link: string;
+  tags?: string[];
+  compact?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
   images = [],
   title,
-  content,
   description,
-  avatars,
   link,
+  tags = [],
+  priority = false,
+  compact = false,
 }) => {
+  const coverImage = images[0] || "/images/placeholder.jpg";
+
   return (
-    <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
-      <Flex
-        s={{ direction: "column" }}
+    <SmartLink
+      href={href}
+      style={{ textDecoration: "none", width: "100%" }}
+    >
+      <Column
         fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
+        gap={compact ? "12" : "16"}
+        className="project-card"
+        style={{
+          cursor: "pointer",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+        }}
       >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
-        )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
+        {/* Image */}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            overflow: "hidden",
+            borderRadius: "12px",
+          }}
+        >
+          <Media
+            priority={priority}
+            aspectRatio={compact ? "21 / 9" : "16 / 9"}
+            radius="m"
+            alt={title}
+            src={coverImage}
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+              transition: "transform 0.3s ease",
+            }}
+            className="project-card-image"
+          />
+        </div>
+
+        {/* Content */}
+        <Flex
+          fillWidth
+          direction="column"
+          gap={compact ? "8" : "12"}
+          paddingX="4"
+        >
+          <Heading as="h3" variant={compact ? "heading-strong-m" : "heading-strong-l"}>
+            {title}
+          </Heading>
+
+          {description && (
+            <Text
+              variant="body-default-s"
+              onBackground="neutral-weak"
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: compact ? 1 : 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+              }}
+            >
+              {description}
+            </Text>
+          )}
+
+          {/* Tags */}
+          {tags && tags.length > 0 && !compact && (
+            <Flex wrap gap="8" marginTop="4">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="project-tag"
+                  style={{
+                    padding: "4px 12px",
+                    borderRadius: "6px",
+                    fontSize: "0.75rem",
+                    fontWeight: "500",
+                    backgroundColor: "var(--accent-light)",
+                    color: "var(--accent)",
+                    border: "1px solid var(--accent-alpha-weak)",
+                  }}
                 >
-                  <Text variant="body-default-s">Leer caso de estudio</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">Ver proyecto</Text>
-                </SmartLink>
-              )}
+                  {tag}
+                </span>
+              ))}
             </Flex>
-          </Column>
-        )}
-      </Flex>
-    </Column>
+          )}
+
+          {link && !compact && (
+            <Flex marginTop="4">
+              <Text
+                variant="label-default-s"
+                onBackground="brand-weak"
+                style={{ display: "flex", alignItems: "center", gap: "4px" }}
+              >
+                Ver proyecto →
+              </Text>
+            </Flex>
+          )}
+        </Flex>
+      </Column>
+    </SmartLink>
   );
 };
+

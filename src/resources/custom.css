@@ -1,23 +1,103 @@
 ﻿/* LinkHub-inspired design */
-body { background: linear-gradient(135deg, #fff7ed, #fff, #fff7ed) !important; }
-[data-border='rounded'] { box-shadow: 0 1px 3px rgba(234,88,12,0.08) !important; border: 1px solid rgba(234,88,12,0.1) !important; }
-@media (max-width: 768px) { button span { font-weight: 500 !important; } }
-h1,h2,h3,h4,h5,h6 { font-weight: 600 !important; letter-spacing: -0.02em !important; }
-.s-show { display: flex !important; }
-.s-hide { display: none !important; }
-@media (max-width: 768px) {
-  .s-show { display: flex !important; }
-  .s-hide { display: none !important; }
+body {
+  background: linear-gradient(135deg, #fff7ed, #fff, #fff7ed) !important;
 }
+
+@media (max-width: 768px) {
+  button span {
+    font-weight: 500 !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.s-show {
+  display: flex !important;
+}
+
+.s-hide {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .s-show {
+    display: flex !important;
+  }
+
+  .s-hide {
+    display: none !important;
+  }
+}
+
 @media (min-width: 769px) {
-  .desktop-logo { display: block !important; }
-  .desktop-menu { display: flex !important; }
-  .mobile-menu-btn { display: none !important; }
+  .desktop-logo {
+    display: block !important;
+  }
+
+  .desktop-menu {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn {
+    display: none !important;
+  }
 }
+
 @media (max-width: 768px) {
-  .desktop-logo { display: none !important; }
-  .desktop-menu { display: none !important; }
-  .mobile-menu-btn { display: flex !important; }
+  .desktop-logo {
+    display: none !important;
+  }
+
+  .desktop-menu {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
 }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}/* Project Cards */
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+.project-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+/* Service Cards */
+.service-card:hover {
+  border-color: var(--accent-alpha-medium);
+  box-shadow: 0 4px 12px rgba(234,88,12,0.08);
+}

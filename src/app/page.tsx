@@ -12,7 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { ContactForm, Services } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -100,8 +100,34 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+
+      {/* Separator */}
+      <Row fillWidth horizontal="center" marginTop="16" marginBottom="8">
+        <Line maxWidth="80" />
+      </Row>
+
+      <RevealFx translateY="16" delay={0.7}>
+        <Services />
+      </RevealFx>
+
+      {/* Separator */}
+      <Row fillWidth horizontal="center" marginTop="8" marginBottom="8">
+        <Line maxWidth="80" />
+      </Row>
+
+      <RevealFx translateY="16" delay={0.8}>
+        <Column fillWidth gap="24" paddingX="l">
+          <Heading
+            as="h2"
+            variant="heading-strong-l"
+            align="center"
+          >
+            Proyectos Destacados
+          </Heading>
+        </Column>
+      </RevealFx>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Projects range={[1, 1]} compact />
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
@@ -123,8 +149,17 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
-      <Mailchimp />
+
+      {/* Separator */}
+      <Row fillWidth horizontal="center" marginTop="24" marginBottom="24">
+        <Line maxWidth="80" />
+      </Row>
+
+      <Projects range={[2]} compact />
+
+      <RevealFx translateY="16" delay={0.9}>
+        <ContactForm />
+      </RevealFx>
     </Column>
   );
 }
